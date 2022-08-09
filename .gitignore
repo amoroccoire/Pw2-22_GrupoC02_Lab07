@@ -16,3 +16,4 @@ test/report/
 Lib/
 Scripts/
 db.sqlite3
+servidor/producto/migrations/
