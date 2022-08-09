@@ -3,4 +3,4 @@ from .models import Producto
 
 # Register your models here.
 
-admin.register(Producto)
+admin.site.register(Producto)
