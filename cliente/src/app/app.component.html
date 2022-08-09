@@ -1,0 +1,55 @@
+<router-outlet></router-outlet>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<h2>Lista de Productos:</h2>
+<div class="lista">
+  <div class="card" style="width: 18rem;" *ngFor="let product of products">
+    <img class="card-img-top" src="{{product.imagen}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{product.nombre}}</h5>
+      <p class="card-text">
+        Categoría: {{product.categoria}}<br>
+        Tipo: {{product.tipo}}<br>
+        Precio: {{product.precio}}<br>
+      </p>
+    </div>
+  </div>
+</div>
+<hr>
+<h2>Agrega nuevos productos:</h2>
+<form action="http://127.0.0.1:8000/api/producto" method="post">
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" id="nombre" placeholder="Enter name" name="nombre">
+  </div>
+
+  <label for="categoria">Categoría</label><br>
+  <select name="categoria" id="categoria" class="form-select">
+    <option value=1>Comida</option>
+    <option value=2>Postre</option>
+    <option value=3>Bebida</option>
+    <option value=4>Entrada</option>
+  </select>
+
+  <div class="form-group">
+    <label for="tipo">Tipo</label>
+    <input type="text" class="form-control" id="tipo" name="tipo" placeholder="Enter type">
+  </div>
+
+  <div class="form-group">
+    <label for="precio">Precio</label>
+    <input type="number" class="form-control" id="precio" placeholder="Enter price" name="precio">
+  </div>
+
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="disponible" name="disponible">
+    <label class="form-check-label" for="disponible">Disponible</label>
+  </div>
+
+  <div class="form-group">
+    <label for="imagen">Link Imagen</label>
+    <input type="text" class="form-control" id="imagen" placeholder="Enter image link" name="imagen">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
